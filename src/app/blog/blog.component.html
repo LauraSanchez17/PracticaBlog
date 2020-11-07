@@ -1,12 +1,24 @@
+<div class="categoria">
+    <p>Elige la categoría</p>
+    <select class="botoncategoria" (change)="onChangeCategoria($event)">
+        <option value="todos">Todos</option>
+        <option [value]="categoria" *ngFor="let categoria of categorias">
+            {{categoria}}
+        </option>
+    </select>
+</div>
+
+
 <div class="blog">
     <div class="post" *ngFor="let post of arrayPost">
-        <h3>{{post.titulo}}</h3>
-        <p>{{post.texto}}</p>
-        <p>{{post.autor}}</p>
         <img [src]="post.imagen">
-        <p>{{post.fecha | date:'fullDate'}}</p>
-        <p>{{post.categoria}}</p>
-
+        <div class="cuerpopost">
+            <h5>{{post.titulo}}</h5>
+            <p>{{post.texto}}</p>
+            <p>{{post.autor}}</p>
+            <p>{{post.fecha | date:'fullDate'}}</p>
+            <p>{{post.categoria}}</p>
+        </div>
     </div>
 
 </div>

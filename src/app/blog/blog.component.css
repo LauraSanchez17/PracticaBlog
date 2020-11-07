@@ -1,16 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+.categoria {
+    padding: 20px 20px;
+   display: flex;
+   background-color: #227093;
+}
+
+.categoria p {
+    font-weight: bold;
+    font-size: large;
+    color: white;
+}
+
+.botoncategoria {
+    margin: 0 20px;
+}
+
 .blog {
+    padding: 20px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color:#34ace0;
 }
 
 .post{
-    width: 250px;
-    border: 1px solid grey;
-    margin: 10px;
-    padding: 10px;
+    width: 350px;
+    margin: 30px;
+    padding: 20px;
+    background-color: #dfe6e9;
 }
 
 .post img {
     width: 100%;
+    padding: 20px, 0;
+}
+
+.cuerpopost {
+    padding: 20px; 
 }

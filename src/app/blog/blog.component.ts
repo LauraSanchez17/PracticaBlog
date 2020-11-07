@@ -8,6 +8,7 @@ import { PostService, Post } from '../services/post.service';
 })
 export class BlogComponent implements OnInit {
   arrayPost: Post[];
+  categorias
 
   constructor(
     private PostService: PostService
@@ -20,6 +21,17 @@ export class BlogComponent implements OnInit {
 
       })
 
+    this.PostService.getCategorias()
+      .then(arrCategorias => this.categorias = arrCategorias);
+
   }
 
+  async onChangeCategoria($event) {
+    if ($event.target.value === 'todos') {
+      this.arrayPost = await this.PostService.getAll();
+    } else {
+      this.arrayPost = await this.PostService.getByCategory($event.target.value)
+    }
+
+  }
 }
