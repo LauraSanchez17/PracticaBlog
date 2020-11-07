@@ -1,0 +1,12 @@
+<div class="blog">
+    <div class="post" *ngFor="let post of arrayPost">
+        <h3>{{post.titulo}}</h3>
+        <p>{{post.texto}}</p>
+        <p>{{post.autor}}</p>
+        <img [src]="post.imagen">
+        <p>{{post.fecha | date:'fullDate'}}</p>
+        <p>{{post.categoria}}</p>
+
+    </div>
+
+</div>

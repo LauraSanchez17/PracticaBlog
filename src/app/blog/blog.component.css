@@ -1,0 +1,16 @@
+.blog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.post{
+    width: 250px;
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 10px;
+}
+
+.post img {
+    width: 100%;
+}
