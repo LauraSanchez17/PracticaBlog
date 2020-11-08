@@ -42,24 +42,31 @@ export class PostService {
 
   }
 
-  getByCategory(pCategoria: string) {
+  getByCategory(pCategoria: string): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       const arrayfiltrado = this.arrPost.filter(post => {
         return post.categoria === pCategoria
+
       });
+
       resolve(arrayfiltrado);
+
     });
+
   }
 
 
-  getCategorias() {
+  getCategorias(): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       const categorias = [];
       for (let post of this.arrPost) {
-        if (categorias.includes(post.categoria)) {
+        if (!categorias.includes(post.categoria)) {
           categorias.push(post.categoria);
+
         }
       }
+
+
       resolve(categorias);
     });
   }

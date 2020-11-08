@@ -12,7 +12,7 @@
 .categoria {
     padding: 20px 20px;
    display: flex;
-   background-color: #227093;
+   background-color: #aa6124af;
 }
 
 .categoria p {
@@ -30,14 +30,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color:#34ace0;
+    background-image: url('../images/080mapr13791_papel_pintado_mural_mapa_antiguo_0.jpg')
 }
 
 .post{
     width: 350px;
     margin: 30px;
     padding: 20px;
-    background-color: #dfe6e9;
+    background-color: #eee5d8;
+ 
+}
+
+.post:hover{
+    background-color: #f5d3a5;
+
 }
 
 .post img {
@@ -47,4 +53,8 @@
 
 .cuerpopost {
     padding: 20px; 
+}
+
+.footerpost {
+text-align: end;
 }

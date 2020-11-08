@@ -15,9 +15,11 @@
         <div class="cuerpopost">
             <h5>{{post.titulo}}</h5>
             <p>{{post.texto}}</p>
-            <p>{{post.autor}}</p>
-            <p>{{post.fecha | date:'fullDate'}}</p>
-            <p>{{post.categoria}}</p>
+            <div class="footerpost">
+                <p>{{post.autor}}</p>
+                <p>{{post.fecha | date:'fullDate'}}</p>
+                <p>{{post.categoria}}</p>
+            </div>
         </div>
     </div>
 

@@ -33,5 +33,6 @@ export class BlogComponent implements OnInit {
       this.arrayPost = await this.PostService.getByCategory($event.target.value)
     }
 
+
   }
 }
