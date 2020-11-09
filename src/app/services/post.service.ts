@@ -38,21 +38,15 @@ export class PostService {
     return new Promise((resolve, reject) => {
       resolve(this.arrPost)
     })
-
-
   }
 
   getByCategory(pCategoria: string): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       const arrayfiltrado = this.arrPost.filter(post => {
         return post.categoria === pCategoria
-
       });
-
       resolve(arrayfiltrado);
-
     });
-
   }
 
 
@@ -62,7 +56,6 @@ export class PostService {
       for (let post of this.arrPost) {
         if (!categorias.includes(post.categoria)) {
           categorias.push(post.categoria);
-
         }
       }
 
@@ -71,7 +64,13 @@ export class PostService {
     });
   }
 
+  agregarPost(pValoresFormulario): Promise<Post[]> {
+    console.log(pValoresFormulario);
+    return new Promise((resolve, reject) => {
+      this.arrPost.push(pValoresFormulario)
+    })
 
+  }
 
 
 
