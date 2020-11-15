@@ -1,0 +1,17 @@
+<div class="blog">
+    <button class="botonblog" [routerLink]="['/blog']">Ir a blog</button>
+
+    <div class="post">
+        <img [src]="postElegido.imagen">
+        <div class="cuerpopost">
+            <h5>{{postElegido.titulo}}</h5>
+            <p>{{postElegido.texto}}</p>
+            <div class="footerpost">
+                <p>{{postElegido.autor}}</p>
+                <p>{{postElegido.fecha | date:'dd/MM/yyyy'}}</p>
+                <p>{{postElegido.categoria}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

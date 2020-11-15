@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+.botonblog{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(243, 233, 214);
+    margin: 10px;
+}
+
+.botonblog:hover{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(235, 191, 125);
+}
+
+
+.blog {
+    padding: 20px 20px;
+    justify-content: center;
+    background-image: url('../images/080mapr13791_papel_pintado_mural_mapa_antiguo_0.jpg')
+}
+
+.post{
+    
+    background-color: #eee5d8;
+    margin: 30px 200px;
+    text-decoration: none;
+
+}
+
+
+.post img {
+    width: 100%;
+    padding: 20px, 0;
+}
+
+.cuerpopost {
+    padding: 20px; 
+    color: black;
+}
+
+.footerpost {
+    text-align: end;
+    color: black;
+}
+
+

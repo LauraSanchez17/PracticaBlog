@@ -9,10 +9,13 @@ import { PostService, Post } from '../services/post.service';
 export class BlogComponent implements OnInit {
   arrayPost: Post[];
   categorias
+  postElegido
 
   constructor(
     private PostService: PostService
-  ) { }
+  ) {
+    this.postElegido = {}
+  }
 
   ngOnInit(): void {
     this.PostService.getAll()
@@ -35,4 +38,5 @@ export class BlogComponent implements OnInit {
 
 
   }
+
 }

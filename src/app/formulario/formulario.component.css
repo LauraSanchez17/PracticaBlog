@@ -7,23 +7,26 @@
 }
 
 .cabeceraformulario{
-      background-color:#aa6124af;
+      background-color:#49433d
 }
         
     
 .formulario {
     padding: 30px;
-    background-color:rgb(224, 177, 138);
+    background-color:rgb(236, 193, 158);
 }
 
 h3 {
     padding: 30px;
+    color: rgb(224, 177, 138);
   
 }
 
 .botonBlog {
-    margin: 20px;
+    padding: 10px;
     border-radius: 10px;
+    margin: 10px;
+    background-color:  rgb(243, 233, 214);
 }
 
 .botonBlog:hover{

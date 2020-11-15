@@ -1,5 +1,8 @@
 <div class="categoria">
-    <p>Elige la categoría</p>
+    <h1 class="titulo">Viajando por el mundo</h1>
+    <div>
+        <p>Elige la categoría</p>
+    </div>
     <div class="navcategoria">
         <select class="botoncategoria" (change)="onChangeCategoria($event)">
             <option value="todos">Todos</option>
@@ -15,17 +18,19 @@
 
 
 <div class="blog">
-    <div class="post" *ngFor="let post of arrayPost">
-        <img [src]="post.imagen">
-        <div class="cuerpopost">
-            <h5>{{post.titulo}}</h5>
-            <p>{{post.texto}}</p>
-            <div class="footerpost">
-                <p>{{post.autor}}</p>
-                <p>{{post.fecha | date:'dd/MM/yyyy'}}</p>
-                <p>{{post.categoria}}</p>
-            </div>
-        </div>
-    </div>
 
+    <div class="post" *ngFor="let post of arrayPost; let i =index">
+        <a [routerLink]="['/post', i]">
+            <img [src]="post.imagen">
+            <div class="cuerpopost">
+                <h5>{{post.titulo}}</h5>
+                <p>{{post.texto}}</p>
+                <div class="footerpost">
+                    <p>{{post.autor}}</p>
+                    <p>{{post.fecha | date:'dd/MM/yyyy'}}</p>
+                    <p>{{post.categoria}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
