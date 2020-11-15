@@ -5,28 +5,43 @@
 
 <form class="formulario" [formGroup]="postForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label>Titulo</label>
+        <label>Título</label>
         <input type="text" class="form-control" formControlName="titulo">
+        <p class="text-danger" *ngIf="postForm.get('titulo').hasError('required') && postForm.get('titulo').touched">
+            Debes introducir un título para tu post</p>
     </div>
 
     <div class="form-group">
         <label>Texto</label>
-        <input type="text" class="form-control" formControlName="texto">
+        <textarea class="form-control" formControlName="texto"></textarea>
+        <p class="text-danger" *ngIf="postForm.get('texto').hasError('minlength') && postForm.get('texto').touched">
+            El campo debe tener un minimo de {{postForm.get('texto').errors.minlength.requiredLength}}
+            caracteres.
+            Has escrito
+            {{postForm.get('texto').errors.minlength.actualLength}} caracteres.
+        </p>
     </div>
 
     <div class="form-group">
         <label>Autor</label>
         <input type="text" class="form-control" formControlName="autor">
+        <p class="text-danger" *ngIf="postForm.get('autor').hasError('required') && postForm.get('autor').touched">Debes
+            introducir un autor</p>
     </div>
 
     <div class="form-group">
         <label>Cargar Imagen</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" formControlName="imagen">
+        <input type="text" class="form-control" formControlName="imagen">
+        <p class="text-danger" *ngIf="postForm.get('imagen').hasError('required') && postForm.get('imagen').touched">
+            Debes
+            introducir una imagen</p>
     </div>
 
     <div class="form-group">
         <label>Fecha</label>
-        <input type="text" class="form-control" formControlName="fecha">
+        <input type="date" class="form-control" formControlName="fecha">
+        <p class="text-danger" *ngIf="postForm.get('fecha').hasError('required') && postForm.get('fecha').touched">Debes
+            introducir una fecha</p>
     </div>
 
     <div class="form-group">
@@ -42,5 +57,5 @@
         </select>
     </div>
     <!--  <button (click)="onSubmit()">Enviar</button> -->
-    <input type="submit" value="Enviar" class="btn">
+    <input type="submit" value="Enviar" class="btn" [disabled]="postForm.invalid">
 </form>

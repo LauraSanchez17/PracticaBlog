@@ -1,12 +1,14 @@
 <div class="categoria">
     <p>Elige la categoría</p>
-    <select class="botoncategoria" (change)="onChangeCategoria($event)">
-        <option value="todos">Todos</option>
-        <option [value]="categoria" *ngFor="let categoria of categorias">
-            {{categoria}}
-        </option>
-    </select>
-    <button class="botonnuevoPost" [routerLink]="['/formulario']">Nuevo Post</button>
+    <div class="navcategoria">
+        <select class="botoncategoria" (change)="onChangeCategoria($event)">
+            <option value="todos">Todos</option>
+            <option [value]="categoria" *ngFor="let categoria of categorias">
+                {{categoria}}
+            </option>
+        </select>
+        <button class="botonnuevoPost" [routerLink]="['/formulario']">Nuevo Post</button>
+    </div>
 </div>
 
 
@@ -20,7 +22,7 @@
             <p>{{post.texto}}</p>
             <div class="footerpost">
                 <p>{{post.autor}}</p>
-                <p>{{post.fecha | date:'fullDate'}}</p>
+                <p>{{post.fecha | date:'dd/MM/yyyy'}}</p>
                 <p>{{post.categoria}}</p>
             </div>
         </div>
