@@ -19,7 +19,14 @@ export class PostService {
   private postElegido;
 
   constructor() {
+    if (localStorage.getItem('arrPost')) {
+      this.arrPost = JSON.parse(localStorage.getItem('arrPost'));
+    } else {
+      this.arrPost = [];
+    }
+
     this.postElegido = {},
+
       this.arrPost = [
         { titulo: 'Viajando por el norte de España', texto: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quaerat eligendi qui dicta ratione dolore nihil tempore repellat id deserunt.', autor: 'Autor1', imagen: 'https://descapada.com/wp-content/uploads/2018/11/rural-1-815x459.jpg', fecha: new Date('05/11/20'), categoria: 'España' },
 
@@ -66,6 +73,9 @@ export class PostService {
     console.log(pValoresFormulario);
     return new Promise((resolve, reject) => {
       this.arrPost.push(pValoresFormulario)
+
+      localStorage.setItem('arrPost', JSON.stringify(this.arrPost));
+
     })
 
   }

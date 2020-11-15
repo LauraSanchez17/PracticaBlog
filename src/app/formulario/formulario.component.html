@@ -1,6 +1,7 @@
 <div class="cabeceraformulario">
-    <button class="botonBlog" [routerLink]="['/blog']">Ir a Blog</button>
     <h3>Añade tu post</h3>
+    <button class="botonBlog" [routerLink]="['/blog']">Ir a Blog</button>
+
 </div>
 
 <form class="formulario" [formGroup]="postForm" (ngSubmit)="onSubmit()">
