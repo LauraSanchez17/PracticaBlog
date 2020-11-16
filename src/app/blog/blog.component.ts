@@ -21,6 +21,7 @@ export class BlogComponent implements OnInit {
     this.PostService.getAll()
       .then((arrPost) => {
         this.arrayPost = arrPost
+        console.log(this.arrayPost);
 
       })
 

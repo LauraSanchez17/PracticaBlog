@@ -19,11 +19,7 @@ export class PostService {
   private postElegido;
 
   constructor() {
-    if (localStorage.getItem('arrPost')) {
-      this.arrPost = JSON.parse(localStorage.getItem('arrPost'));
-    } else {
-      this.arrPost = [];
-    }
+
 
     this.postElegido = {},
 
@@ -41,6 +37,11 @@ export class PostService {
 
   getAll(): Promise<Post[]> {
     return new Promise((resolve, reject) => {
+      if (localStorage.getItem('arrPost')) {
+        this.arrPost = JSON.parse(localStorage.getItem('arrPost'));
+      } else {
+        this.arrPost = [];
+      }
       resolve(this.arrPost)
     })
   }
